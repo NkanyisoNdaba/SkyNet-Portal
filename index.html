@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+    <body>
+        <div class="header">
+            <span class="headerText">SkyNet Portal</span>
+        </div>
+        <div class="commands">
+            <button class="executeCommand" data-bind='enable: Agents().length > 0'>Execute Command</button>
+            <button class="otherCommands" data-bind="click: ShowAddAgentDialog.bind(this, true)">Add Agent</button>
+            <button class="otherCommands" data-bind='enable: Agents().length > 0'>Edit Agent</button>
+            <button class="otherCommands" data-bind='enable: Agents().length > 0'>Remove Agent</button>
+        </div>
+        <div id="agents" class="agents" data-bind='visible: ShouldShowAgents'>
+            <span class="agentTagline">Agents</span>
+            <div data-bind="foreach: Agents" class="agentWrapper">
+                <div class="agent" data-bind="style:{ 'background-color' :  $data.Status() }">
+                    <div class="agentName" data-bind="text:Name"></div>
+
+                    <table class="agentData">
+                        <tr>
+                            <td>Last Command:</td>
+                            <td data-bind="text:Command"></td>
+                        </tr>
+                        <tr>
+                            <td>Result:</td>
+                            <td data-bind="text:CommandResult"></td>
+                        </tr>
+                        <tr>
+                            <td>Execution Time:</td>
+                            <td data-bind="text:CommandRunTimestamp"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="addAgent" class="agents" data-bind='visible: ShouldShowAddAgent'>
+            <div class="agentTagline">Add Agent</div>
+            <br/>
+            <div class="error" data-bind='visible: ShouldShowAddAgentError'>Cannot contact agent. Please check IP and port and try again.</div>
+            <br/>
+            <form data-bind="submit: AddAgent">
+                <div class="formWrapper">
+                    <label>Agent Name</label>
+                    <input name="name" id="name" type="text" size="25"/>
+                </div>
+                <div class="formWrapper">
+                    <label>IP Address</label>
+                    <input name="ip" id="ip" size="25"/>
+                </div>
+                <div class="formWrapper">
+                    <label>Port</label>
+                    <input name="port" id="port" size="25"/>
+                </div>
+                <div class="formWrapper">
+                    <button type="submit">Add</button>
+                    <button type="button" data-bind="click: ShowAddAgentDialog.bind(this,false)">Cancel</button>
+                </div>
+            </form>
+            
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        var mainViewModel = new AppViewModel();
+        ko.applyBindings(mainViewModel);
+    </script>
+</html>

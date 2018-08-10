@@ -1,0 +1,105 @@
+body{
+    background-color:slategray;
+    font: normal 0.8em Verdana, Geneva, Arial, Helvetica, sans-serif;
+    color:floralwhite;
+}
+
+.header{
+    width:100%; 
+    height:50px; 
+    background-color:darkorange;
+    line-height: 50px;
+    font-size: 24px;
+    color:floralwhite;
+}
+
+.headerText{
+    padding:10px;
+    vertical-align: middle;
+}
+
+.commands{
+    margin-top:50px;
+    width: 100%;
+}
+
+.executeCommand{
+    float:left;
+    background-color: gainsboro;
+    border-radius: 4px;
+    font-size:16px;
+}
+
+.otherCommands{
+    float:right;
+    margin-right: 10px;
+    background-color: gainsboro;
+    font-size:16px;
+    border-radius: 4px;
+}
+
+.agents{
+    width:100%;
+    min-height:350px;
+    max-height: 80%;
+    margin-top: 80px;
+    border: 1px sandybrown dashed;
+}
+
+.agentTagline{
+    width:99%;
+    margin-left:1%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.agent{
+    position: float;
+    float:left;
+    width:400px;
+    margin-top:1%;
+    margin-left:1%;
+    height:140px;
+    background-color:dimgrey;
+}
+
+.agentName{
+    text-align: center;
+    width:100%;
+    font-size:16px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.agentCommand{
+    text-align: left;
+    margin-top:20px;
+    width:100%;
+    font-size:16px;
+    display: block; 
+}
+
+.agentWrapper{
+    width:100%;
+    height:100%;
+}
+
+.formWrapper{
+    width:380px;
+    margin-left:1%;
+}
+
+.error{
+    color:firebrick;
+    font-weight: bolder;
+    font-size:18px;
+    margin-left:1%;
+}
+
+.agentData{
+    margin-top:40px;
+}
+
+/* essential */
+label {float: left; width: 6em; text-align: left; width: 150px; margin-left:1%;}
+input, textarea {text-align: left;}

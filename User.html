@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="jquery/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            function Account(bank, accNo, type, status) {
+                var self = this;
+                self.bank = bank;
+                self.accNo = accNo;
+                self.type = type;
+                self.status = status;
+            };
+            var myAcc = new Account("Bank1", "12345678", "Saving", "Active");
+            // To add this
+            $("#accontBankName").text(myAcc.bank);
+            $("#accountNum").text(myAcc.accNo);
+            $("#accountType").text(myAcc.type);
+            $("#accountStatus").text(myAcc.status);
+        });
+    </script>
+</head>
+<body>
+    <h2>My Account </h2>
+    <span>Bank Name:</span>&nbsp;<span id="accontBankName"></span>
+    <br />
+    <span>Account Number:</span>&nbsp;<span id="accountNum"></span>
+    <br />
+    <span>Account Type:</span>&nbsp;<span id="accountType"></span>
+    <br />
+    <span>Status:</span>&nbsp;<span id="accountStatus"></span>
+
+
+</body>
+
+</html>
